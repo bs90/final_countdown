@@ -340,17 +340,22 @@ package NWO_fla
       
       public function done_task(task_id:*) : *
       {
-         return;
+         var url_request = new URLRequest();
+         url_request.url =  "http://games.heasygame.com/passwords/check";
+         url_request.method = URLRequestMethod.POST
+         var url_loader:URLLoader = new URLLoader();
+         var requestVars:URLVariables = new URLVariables();
+         requestVars.key = "tfc";
+         requestVars.value = "awesomevalue";
+         requestVars.final_countdown = true;
+         requestVars.question_id = task_id;
+         url_request.data = requestVars;
+         url_loader.load(url_request);
       }
       
       public function cheat_task(task_id:*) : *
       {
          return;
-      }
-      
-      public function result_receive(e:Event) : void
-      {
-         MovieClip(root).send_notification("You clear a checkpoint! Check score");
       }
       
       public function gotoOtherWall(s:String) : void
