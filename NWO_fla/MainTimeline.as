@@ -229,7 +229,7 @@ package NWO_fla
 
       public var start_time = new Date();
       
-      public var limit_time = 4*60*60*1000;
+      public var limit_time = 60*60*1000;
       
       public var i;
       

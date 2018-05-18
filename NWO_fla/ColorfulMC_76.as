@@ -143,7 +143,10 @@ package NWO_fla
                this["c" + this.i + this.j].visible = false;
             }
          }
-         this.r24_clf_bee.visible = true;
+         if(!MovieClip(root).r24_bee_got)
+         {
+            this.r24_clf_bee.visible = true;
+         }
          MovieClip(root).done_task(9);
       }
       
@@ -234,10 +237,7 @@ package NWO_fla
          this.c43.lock_mc.visible = true;
          this.c54.lock_mc.visible = true;
          this.state_arr[4][2] = this.state_arr[7][2] = this.state_arr[4][4] = this.state_arr[5][4] = this.state_arr[6][5] = 2;
-         if(!MovieClip(root).r24_bee_got)
-         {
-            this.r24_clf_bee.visible = false;
-         }
+         this.r24_clf_bee.visible = false;
          this.r24_clf_bee.addEventListener(MouseEvent.CLICK,this.get_clf_bee);
       }
    }
