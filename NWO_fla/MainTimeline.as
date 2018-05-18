@@ -1,6 +1,5 @@
 package NWO_fla
 {
-   import com.adobe.crypto.MD5;
    import flash.display.MovieClip;
    import flash.display.SimpleButton;
    import flash.events.Event;

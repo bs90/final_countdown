@@ -94,6 +94,10 @@ package NWO_fla
       public var empty_p;
       
       public var init_state;
+
+      public var c_state;
+
+      public var ii;
       
       public function puzz_95()
       {
@@ -111,12 +115,31 @@ package NWO_fla
             e.target.y = this.empty_p[0] * this.base_size;
             this.empty_p = [this.a,this.b];
             this.check_win();
+            // this.print_state();
          }
       }
+
+      /* public function print_state()
+      {
+         this.ii = 0;
+         this.c_state = [];
+         for(this.i = 0; this.i < 6; this.i++)
+         {
+            for(this.j = 0; this.j < 6; this.j++)
+            {
+               if(!(this.i == 0 && this.j == 5))
+               {
+                  this.c_state[this.ii] = [this["p" + this.i + this.j].x, this["p" + this.i + this.j].y];
+                  this.ii ++;
+               }
+            }
+         }
+         trace(c_state);
+      } */
       
       public function check_win() : *
       {
-         for(this.i = 1; this.i < 6; this.i++)
+         for(this.i = 0; this.i < 6; this.i++)
          {
             for(this.j = 0; this.j < 6; this.j++)
             {
@@ -138,7 +161,7 @@ package NWO_fla
          this.suf = 0;
          this.base_size = 50;
          this.empty_p = [0,5];
-         this.init_state = [[0,100],[50,50],[0,50],[50,0],[150,50],[50,100],[50,150],[0,0],[100,0],[150,0],[250,50],[0,200],[0,150],[100,150],[100,50],[250,100],[200,0],[50,250],[0,250],[150,100],[100,100],[200,100],[200,50],[50,200],[150,200],[150,150],[250,200],[250,250],[200,150],[100,250],[100,200],[150,250],[200,250],[200,200],[250,150]];
+         this.init_state = [[50, 0], [100, 0], [150, 0], [200, 0], [250, 50], [0, 0], [0, 50], [50, 50], [100, 50], [150, 50], [200, 50], [50, 100], [100, 100], [150, 100], [200, 100], [250, 150], [250, 100], [0, 100], [0, 150], [50, 150], [100, 150], [150, 150], [200, 150], [50, 200], [100, 200], [150, 200], [200, 200], [250, 250], [250, 200], [0, 200], [0, 250], [50, 250], [100, 250], [150, 250], [200, 250]];
          for(this.i = 0; this.i < 6; this.i++)
          {
             for(this.j = 0; this.j < 6; this.j++)
@@ -148,8 +171,11 @@ package NWO_fla
                   this["p" + this.i + this.j].xbd = this.j * this.base_size;
                   this["p" + this.i + this.j].ybd = this.i * this.base_size;
                   this["p" + this.i + this.j].addEventListener(MouseEvent.CLICK,this.clickHandle);
-                  this["p" + this.i + this.j].x = this.j * this.base_size;
-                  this["p" + this.i + this.j].y = this.i * this.base_size;
+                  this["p" + this.i + this.j].x = this.init_state[this.suf][0];
+                  this["p" + this.i + this.j].y = this.init_state[this.suf][1];
+                  // this["p" + this.i + this.j].x = this["p" + this.i + this.j].xbd;
+                  // this["p" + this.i + this.j].y = this["p" + this.i + this.j].ybd;
+                  this.suf += 1;
                }
             }
          }

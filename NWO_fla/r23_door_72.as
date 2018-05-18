@@ -50,11 +50,11 @@ package NWO_fla
       
       public function check_win() : *
       {
+         this.s = "";
          for(this.i = 1; this.i < 11; this.i++)
          {
             this.s = this.s + String.fromCharCode(this["n" + this.i].number);
          }
-         trace(this.s);
          if(this.s == "OPENSESAME" && true)
          {
             if(!(MovieClip(root).r12_bomb_got && MovieClip(root).r22_sun_got && MovieClip(root).r21_map_got && MovieClip(root).r24_bee_got))
@@ -74,7 +74,7 @@ package NWO_fla
          {
             stop();
          }
-         this.first_state = "WTH!ISTHIS";
+         this.first_state = "WHATISTHIS";
          for(this.i = 1; this.i < 11; this.i++)
          {
             this["n" + this.i].number = this.first_state.charAt(this.i - 1).charCodeAt(0);

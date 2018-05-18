@@ -69,6 +69,8 @@ package NWO_fla
                return;
             }
             MovieClip(root).done_task(28);
+            MovieClip(root).dead_mc.visible = true;
+            MovieClip(root).dead_mc.gotoAndStop(2);
          }
       }
       
