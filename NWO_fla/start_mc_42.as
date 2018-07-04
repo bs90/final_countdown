@@ -19,7 +19,7 @@ package NWO_fla
       
       public function check_and_start(e:MouseEvent) : *
       {
-         if(this.slogan_txt.text == "#from_asia_to_the_world")
+         if(this.slogan_txt.text == "#awesome")
          {
             MovieClip(root).started = true;
             e.target.parent.visible = false;
