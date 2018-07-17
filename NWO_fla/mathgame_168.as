@@ -116,7 +116,7 @@ package NWO_fla
          if(i == 19 && this.current_number == 146)
          {
             this.gotoAndStop(2);
-            MovieClip(root).done_task(21);
+            MovieClip(root).done_task(121);
          }
       }
       

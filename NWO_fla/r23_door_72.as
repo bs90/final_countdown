@@ -59,11 +59,11 @@ package NWO_fla
          {
             if(!(MovieClip(root).r12_bomb_got && MovieClip(root).r22_sun_got && MovieClip(root).r21_map_got && MovieClip(root).r24_bee_got))
             {
-               MovieClip(root).cheat_task(12);
+               MovieClip(root).cheat_task(111);
                return;
             }
             this.gotoAndStop(2);
-            MovieClip(root).done_task(12);
+            MovieClip(root).done_task(111);
             MovieClip(root).r23_door_unlocked = true;
          }
       }

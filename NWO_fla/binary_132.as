@@ -44,7 +44,7 @@ package NWO_fla
          if(this.s == "2510")
          {
             this.gotoAndPlay(5);
-            MovieClip(root).done_task(20);
+            MovieClip(root).done_task(120);
          }
       }
       

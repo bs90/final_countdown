@@ -112,7 +112,7 @@ package NWO_fla
             }
          }
          this.gotoAndStop(2);
-         MovieClip(root).done_task(13);
+         MovieClip(root).done_task(114);
       }
       
       function frame1() : *

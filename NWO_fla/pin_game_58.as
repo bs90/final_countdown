@@ -121,7 +121,7 @@ package NWO_fla
             {
                MovieClip(root).r14_battery2_got = true;
                MovieClip(root)["shared_r14_battery2"].visible = true;
-               MovieClip(root).done_task(19);
+               MovieClip(root).done_task(119);
             }
             else
             {

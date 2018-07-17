@@ -153,7 +153,7 @@ package NWO_fla
             }
          }
          this.hidden_clock_hour.gotoAndStop(2);
-         MovieClip(root).done_task(16);
+         MovieClip(root).done_task(115);
       }
       
       function frame1() : *

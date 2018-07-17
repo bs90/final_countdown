@@ -47,7 +47,7 @@ package NWO_fla
             }
          }
          this.gotoAndStop(2);
-         MovieClip(root).done_task(2);
+         MovieClip(root).done_task(101);
       }
       
       public function reset_game() : *

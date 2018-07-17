@@ -25,7 +25,7 @@ package NWO_fla
       
       public function set_clock_win() : *
       {
-         MovieClip(root).done_task(17);
+         MovieClip(root).done_task(117);
          this.clock_hidden.visible = true;
       }
       

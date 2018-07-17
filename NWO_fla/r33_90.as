@@ -70,9 +70,14 @@ package NWO_fla
          }
          if(this.s == "10001000100000100010")
          {
-            this.gotoAndStop(3);
-            MovieClip(root).r33_door_unlocked = true;
-            MovieClip(root).done_task(22);
+            if(MovieClip(root).r34_microsd_got)
+            {
+               this.gotoAndStop(3);
+               MovieClip(root).r33_door_unlocked = true;
+               MovieClip(root).done_task(122);
+            } else {
+               MovieClip(root).cheat_task(122);
+            }
          }
       }
       

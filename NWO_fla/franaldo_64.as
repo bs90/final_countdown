@@ -89,12 +89,19 @@ package NWO_fla
                if(e.target.parent["fracup1"].current_state == "red strawberry" && e.target.parent["fracup2"].current_state == "blue watermelon" && e.target.parent["fracup3"].current_state == "orange apple")
                {
                   franaldo_hide1.gotoAndStop(2);
-                  MovieClip(root).done_task(8);
+                  MovieClip(root).done_task(109);
                }
                if(e.target.parent["fracup1"].current_state == "red mango" && e.target.parent["fracup2"].current_state == "blue banana" && e.target.parent["fracup3"].current_state == "green watermelon")
                {
-                  franaldo_hide2.gotoAndStop(2);
-                  MovieClip(root).done_task(18);
+                  if(MovieClip(root).r32_clock_minute_in && MovieClip(root).r32_clock_hour_in)
+                  {
+                     franaldo_hide2.gotoAndStop(2);
+                     MovieClip(root).done_task(118);
+                  }
+                  else
+                  {
+                     MovieClip(root).cheat_task(118);
+                  }
                }
             }
             else

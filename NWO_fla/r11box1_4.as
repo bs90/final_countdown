@@ -46,7 +46,7 @@ package NWO_fla
          if(this.s == "9641")
          {
             MovieClip(root).r11_box_unlocked = true;
-            MovieClip(root).done_task(6);
+            MovieClip(root).done_task(104);
             this.gotoAndStop(2);
          }
       }

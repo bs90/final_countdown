@@ -179,7 +179,7 @@ package NWO_fla
                   }
                }
             }
-            MovieClip(root).done_task(5);
+            MovieClip(root).done_task(105);
             this.visible = false;
          }
       }

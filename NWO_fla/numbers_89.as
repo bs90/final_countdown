@@ -49,7 +49,7 @@ package NWO_fla
          if(this.s == "28513")
          {
             gotoAndStop(2);
-            MovieClip(root).done_task(14);
+            MovieClip(root).done_task(113);
          }
       }
       

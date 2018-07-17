@@ -145,7 +145,7 @@ package NWO_fla
             this.right_x = this.current_x + this.block.width / this.base_size;
             if(this.current_x == 6)
             {
-               MovieClip(root).done_task(25);
+               MovieClip(root).done_task(125);
                this.hidden.visible = true;
                if(!MovieClip(root).r44_cuuhoa_got)
                {

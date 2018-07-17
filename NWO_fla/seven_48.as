@@ -41,7 +41,7 @@ package NWO_fla
          this.number = this.number % 1000000;
          if(this.number == 864192)
          {
-            MovieClip(root).done_task(3);
+            MovieClip(root).done_task(102);
             this.gotoAndStop(2);
          }
          else

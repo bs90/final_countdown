@@ -147,7 +147,7 @@ package NWO_fla
          {
             this.r24_clf_bee.visible = true;
          }
-         MovieClip(root).done_task(9);
+         MovieClip(root).done_task(108);
       }
       
       public function count_in_array(arr:*) : Object

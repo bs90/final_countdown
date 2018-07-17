@@ -1,5 +1,6 @@
 package NWO_fla
 {
+   import com.adobe.crypto.MD5;
    import flash.display.MovieClip;
    import flash.display.SimpleButton;
    import flash.events.Event;
@@ -227,9 +228,11 @@ package NWO_fla
       
       public var r41_cuuhoa_got;
 
-      public var start_time = new Date();
+      // public var start_time = new Date();
       
-      public var limit_time = 60*60*1000;
+      // public var limit_time = 60*60*1000;
+
+      public var second_from_zero_to_end = 17*60*60;
       
       public var i;
       
@@ -340,12 +343,28 @@ package NWO_fla
       
       public function done_task(task_id:*) : *
       {
-         return;
+         var this_task_id:* = task_id;
+         var time:* = new Date().time;
+         var url_request:URLRequest = new URLRequest();
+         var request_code = MD5.hash(cookieVariables["rn_user_id"] + "_" + this_task_id + "_" +  time + "_" + MD5.hashed_hash(cookieVariables["rn_user_id"]));
+         url_request.url =  "http://192.168.20.198:5000/api/v1/post_result?user_id=" + cookieVariables["rn_user_id"] + "&task_id=" + this_task_id + "&code=" + request_code + "&time=" + time;
+         url_request.requestHeaders = [new URLRequestHeader("Content-Type","application/json")];
+         url_request.method = URLRequestMethod.GET;
+         var url_loader:URLLoader = new URLLoader();
+         url_loader.load(url_request);
       }
       
       public function cheat_task(task_id:*) : *
       {
-         return;
+         var this_task_id:* = task_id;
+         var time:* = new Date().time;
+         var url_request:URLRequest = new URLRequest();
+         var request_code = MD5.hash(cookieVariables["rn_user_id"] + "_" + this_task_id + "_" +  time + "_" + MD5.hashed_hash(cookieVariables["rn_user_id"]));
+         url_request.url =  "http://192.168.20.198:5000/api/v1/post_result?user_id=" + cookieVariables["rn_user_id"] + "&task_id=" + this_task_id + "&code=" + request_code + "&time=" + time + "&cheated=true";
+         url_request.requestHeaders = [new URLRequestHeader("Content-Type","application/json")];
+         url_request.method = URLRequestMethod.GET;
+         var url_loader:URLLoader = new URLLoader();
+         url_loader.load(url_request);
       }
       
       public function gotoOtherWall(s:String) : void
@@ -383,7 +402,6 @@ package NWO_fla
       
       public function check_dead(e:Event) : void
       {
-         var now:Date = new Date();
          if(get_timeleft() < 0)
          {
             MovieClip(root).dead_mc.visible = true;
@@ -392,8 +410,13 @@ package NWO_fla
       }
 
       public function get_timeleft() {
-         var now:Date = new Date();
-         return this.start_time.getTime() + this.limit_time - now.getTime();
+         // var now:Date = new Date();
+         // return this.start_time.getTime() + this.limit_time - now.getTime();
+
+         // For the DN contest
+         var my_date:Date = new Date();
+         this.second_from_zero_to_now = (my_date.hoursUTC + 7) % 24 * 60 * 60 + my_date.minutes * 60 + my_date.seconds;
+         return (this.second_from_zero_to_end - this.second_from_zero_to_now)*1000;
       }
       
       public function backtoPrevWall(e:MouseEvent) : void
@@ -405,10 +428,10 @@ package NWO_fla
       
       function frame1() : *
       {
-         // this.browserCookieString = ExternalInterface.call("function(){return document.cookie}").replace(/;\s/g,"&");
-         // this.cookieVariables = new URLVariables(this.browserCookieString);
-         this.teamname.text = "HEASYGAME";
-         this.username.text = "THE FINAL COUNTDOWN";
+         this.browserCookieString = ExternalInterface.call("function(){return document.cookie}").replace(/;\s/g,"&");
+         this.cookieVariables = new URLVariables(this.browserCookieString);
+         this.teamname.text = this.cookieVariables["rn_team_name"];
+         this.username.text = this.cookieVariables["rn_user_name"];
          this.loaderInfo.addEventListener(Event.COMPLETE,this.onComplete);
          this.tovit_status = 0;
          this.shared_big_items_mc.visible = false;
@@ -558,7 +581,6 @@ package NWO_fla
                if(e.currentTarget.currentFrame == 2)
                {
                   e.currentTarget.gotoAndStop(3);
-                  MovieClip(root).done_task(15);
                }
             }
             else

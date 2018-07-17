@@ -28,6 +28,7 @@ package NWO_fla
             {
                MovieClip(root).using = "";
                MovieClip(root)["shared_items_bg_mc"].visible = false;
+               MovieClip(root).done_task(112);
                e.target.parent.gotoAndStop(2);
             }
             else

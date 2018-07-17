@@ -47,11 +47,11 @@ package NWO_fla
          {
             if(!MovieClip(root).r32_gift_got)
             {
-               MovieClip(root).cheat_task(15);
+               MovieClip(root).cheat_task(116);
                return;
             }
             MovieClip(root).r31_box_unlocked = true;
-            MovieClip(root).done_task(15);
+            MovieClip(root).done_task(116);
             this.gotoAndStop(2);
          }
       }

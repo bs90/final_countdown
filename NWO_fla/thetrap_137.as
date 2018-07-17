@@ -101,7 +101,7 @@ package NWO_fla
          if(this.tmp == 13)
          {
             this.rainbow.visible = true;
-            MovieClip(root).done_task(23);
+            MovieClip(root).done_task(123);
          }
       }
       

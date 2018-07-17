@@ -23,7 +23,7 @@ package NWO_fla
          {
             MovieClip(root).started = true;
             e.target.parent.visible = false;
-            MovieClip(root).done_task(1);
+            MovieClip(root).done_task(100);
          }
       }
       

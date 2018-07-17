@@ -85,7 +85,7 @@ package NWO_fla
       {
          this.removeEventListener(Event.ENTER_FRAME,this.quay_len);
          this.gotoAndStop(2);
-         MovieClip(root).done_task(26);
+         MovieClip(root).done_task(126);
       }
       
       public function get_r43_fp4(e:MouseEvent) : void

@@ -43,7 +43,7 @@ package NWO_fla
          }
          if(this.s == "253")
          {
-            MovieClip(root).done_task(4);
+            MovieClip(root).done_task(103);
             this.gotoAndStop(2);
          }
       }

@@ -65,10 +65,10 @@ package NWO_fla
          {
             if(!(MovieClip(root).r13_door_unlocked && MovieClip(root).r23_door_unlocked && MovieClip(root).r33_door_unlocked && MovieClip(root).r43_bnote_got))
             {
-               MovieClip(root).cheat_task(28);
+               MovieClip(root).cheat_task(128);
                return;
             }
-            MovieClip(root).done_task(28);
+            MovieClip(root).done_task(128);
             MovieClip(root).dead_mc.visible = true;
             MovieClip(root).dead_mc.gotoAndStop(2);
          }
