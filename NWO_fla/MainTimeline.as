@@ -227,9 +227,11 @@ package NWO_fla
       
       public var r41_cuuhoa_got;
 
-      public var start_time = new Date();
+      // public var start_time = new Date();
       
-      public var limit_time = 60*60*1000;
+      // public var limit_time = 60*60*1000;
+
+      public var second_from_zero_to_end = 17*60*60;
       
       public var i;
       
@@ -383,7 +385,6 @@ package NWO_fla
       
       public function check_dead(e:Event) : void
       {
-         var now:Date = new Date();
          if(get_timeleft() < 0)
          {
             MovieClip(root).dead_mc.visible = true;
@@ -392,8 +393,13 @@ package NWO_fla
       }
 
       public function get_timeleft() {
-         var now:Date = new Date();
-         return this.start_time.getTime() + this.limit_time - now.getTime();
+         // var now:Date = new Date();
+         // return this.start_time.getTime() + this.limit_time - now.getTime();
+
+         // For the DN contest
+         var my_date:Date = new Date();
+         this.second_from_zero_to_now = (my_date.hoursUTC + 7) % 24 * 60 * 60 + my_date.minutes * 60 + my_date.seconds;
+         return (this.second_from_zero_to_end - this.second_from_zero_to_now)*1000;
       }
       
       public function backtoPrevWall(e:MouseEvent) : void
